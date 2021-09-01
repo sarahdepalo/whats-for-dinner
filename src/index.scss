@@ -1,3 +1,12 @@
+// Theme Variables
+$dark-blue: #06152d;
+$dark-purple: #5d17eb;
+$light-purple: #a289fe;
+$hot-pink: #ed07c9;
+
+//Font Variables
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +14,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $dark-blue;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
 }
