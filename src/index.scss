@@ -1,11 +1,4 @@
-// Theme Variables
-$dark-blue: #06152d;
-$dark-purple: #5d17eb;
-$light-purple: #a289fe;
-$hot-pink: #ed07c9;
-
-//Font Variables
-
+@import './variables';
 
 body {
   margin: 0;
@@ -16,6 +9,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: $dark-blue;
   color: white;
+  font-family: $roboto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $merriweather;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 code {
@@ -27,4 +30,17 @@ code {
 .wrapper {
   width: 80%;
   margin: 0 auto;
+}
+
+//Font Size calculations from CSS Tricks
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
 }

@@ -1,0 +1,90 @@
+@import '../../variables';
+
+nav {
+    display: flex;
+    border-bottom: 1px solid grey;
+
+    a {
+        margin-left: auto;
+        letter-spacing: 1.7px;
+        font-weight: 500;
+        align-self:center;
+        margin-right: 55px;
+    }
+
+    a:hover {
+        color: $light-purple;
+    }
+
+    .logo {
+        width: 450px;
+        height: auto;
+        margin-left: 25px;
+    }
+}
+
+.toggleButton {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 21px;
+    border: none;
+    background-color: $dark-blue;
+
+    .bar {
+        height: 3px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .toggleButton {
+        margin-top: 5px;
+        display: flex;
+        align-self: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+
+        a {
+            margin-left: 0;
+            display:none;
+        }
+
+        .logo {
+            width: 280px;
+            margin-left: 0;
+        }
+
+        .active {
+            display: flex;
+            align-self: flex-start;
+            margin-top: 10px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+        }
+    
+    }
+}
+
+// Galaxy Fold:
+@media screen and (max-width: 280px) {
+    nav {
+        .logo {
+            width: 230px;
+        }
+    }
+
+    .toggleButton {
+        margin-top: 0;
+    }
+
+}
