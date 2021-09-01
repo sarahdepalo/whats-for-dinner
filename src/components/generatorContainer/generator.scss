@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+.cuisineContainer {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.proteinsContainer {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+
+
+@media screen and (max-width: 960px) {
+    .container {
+        width: 100%;
+    }
+
+}
