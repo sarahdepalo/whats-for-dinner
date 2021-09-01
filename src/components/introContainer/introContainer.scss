@@ -1,0 +1,65 @@
+.row {
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+}
+
+.col {
+    flex: 50%;
+    flex-grow: 2;
+    img {
+        margin: 0 auto;
+        align-self: center;
+        max-width: 100%;
+        height: auto;
+    }
+    &:first-child {
+        flex-grow: 1;
+        h1, .paragraphBox{
+            width: 75%;
+        }
+    
+        p {
+            margin-bottom: 35px;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 960px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+        &:first-child {
+            flex-grow: 1;
+            h1, .paragraphBox{
+                width: 100%;
+            }
+        }
+        &:last-child {
+            margin-top: 30px;
+        }
+    }
+}
+
+// iPad Pro
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    .col {
+        img {
+            align-self: center;
+            margin-top: 10%;
+            margin-left: 10%;
+        }
+        width: 100%;
+        &:first-child {
+            flex-grow: 1;
+            h1, .paragraphBox{
+                width: 100%;
+            }
+        }
+    }
+}
