@@ -14,26 +14,47 @@ const Generator = () => {
         const value = event.target.value;
         setState({
             ...state,
-            [event.target.name]: value
+            [event.target.name]: parseInt(value)
         });
-        console.log(event.target.value)
     };
 
     const handleSubmit = async (event) => {
+        event.preventDefault();
+
         let randomEntreeId 
         let randomSideId
-        event.preventDefault();
-        if(!!state.cuisine) {
-            const cuisineId = parseInt(state.cuisine);
-            // fetch all the entrees for that category
-            const localEntreeUrl = `http://127.0.0.1:3000/entrees/category/${cuisineId}`
-            const response = await fetch(localEntreeUrl).then((response) => response.json());
-            randomEntreeId = (Math.floor(Math.random() * response.entrees.length))
+
+        //If user ONLY selects cuisine
+        if(!!state.cuisine && state.protein === "") {
+            // fetch all the entrees & sides for that category
+            const localUrl = `http://127.0.0.1:3000/dinner/category/${state.cuisine}`;
+            const response = await fetch(localUrl).then((response) => response.json());
+            randomEntreeId = (Math.floor(Math.random() * response.entrees.length));
             setRandomEntree(response.entrees[randomEntreeId]);
             //Randomize sides for that category
             randomSideId = (Math.floor(Math.random() * response.sides.length));
-            console.log(randomSideId)
-            setRandomSide(response.sides[randomSideId])
+            setRandomSide(response.sides[randomSideId]);
+        } else {
+            //If user selects cuisine AND protein
+            if(!!state.cuisine && !!state.protein) {
+                const localUrl = `http://127.0.0.1:3000/dinner/category/${state.cuisine}/protein/${state.protein}`;
+                const response = await fetch(localUrl).then((response) => response.json());
+                console.log('Protein and cuisine response is', response)
+                randomEntreeId = (Math.floor(Math.random() * response.entrees.length));
+                setRandomEntree(response.entrees[randomEntreeId]);
+                randomSideId = (Math.floor(Math.random() * response.sides.length));
+                setRandomSide(response.sides[randomSideId]);
+            } else {
+                //If user selects ONLY protein
+                if(state.cuisine === "" && !!state.protein) {
+                    const localUrl = `http://127.0.0.1:3000/dinner/protein/${state.protein}`;
+                    const response = await fetch(localUrl).then((response) => response.json());
+                    randomEntreeId = (Math.floor(Math.random() * response.entrees.length));
+                    setRandomEntree(response.entrees[randomEntreeId]);
+                    randomSideId = (Math.floor(Math.random() * response.sides.length));
+                    setRandomSide(response.sides[randomSideId]);
+                }
+            }
         }
     };
 
@@ -167,6 +188,17 @@ const Generator = () => {
                 <button type="submit" className="primaryBtn">LET'S EAT!</button>
             </div>
         </form>
+
+        <div className="resultsContainer">
+            {!!randomEntree ? 
+            <div>
+            {randomEntree.entree_name}
+            {randomSide.side_name}
+            </div>
+      
+                
+            : null}
+        </div>
         </>
     )
 }
