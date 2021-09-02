@@ -29,3 +29,4 @@ Find out what's for dinner [here](https://whats-4-dinner.netlify.app/).
 * Adding links to recipes for each item
 * Giving the user the ability to select an entree or side they want to keep and just randomize the other option instead of randomizing both on each click. 
 * Adding a fun animation before the dinner idea is generated. 
+* Adding more entrees and sides! 
