@@ -64,3 +64,12 @@
         }
     }
 }
+
+@media only screen and (device-width: 768px) {
+    /* For general iPad layouts */
+    .col {
+        img {
+            width: 80%;
+        }
+    }
+}

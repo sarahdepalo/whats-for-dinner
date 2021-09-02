@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import './generator.scss';
-//to do:
-//finish styling 
-//add some cool effect for when the 'dinner' is loading. 
+
 const Generator = () => {
     const [state, setState] = useState({
         cuisine: "",
@@ -97,7 +95,7 @@ const Generator = () => {
 
     return (
         <>
-        <div className="container">
+        <div className="container" id="get-dinner">
             <h2>Find Out What's For Dinner</h2>
             <p>We've tried to make planning dinner as easy as possible. Select one cuisine, and/or one protein and hit <em>Let's Eat! </em>You can also hit <em>Let's Eat </em>without choosing a cuisine or protein for a truly random dinner idea.</p>
         </div>
@@ -108,7 +106,7 @@ const Generator = () => {
                 <div className="options">
                     <input 
                     id="italian"
-                    type="checkbox"
+                    type="radio"
                     name="cuisine"
                     value="1"
                     aria-label="italian"
@@ -119,7 +117,7 @@ const Generator = () => {
 
                     <input 
                     id="mexican"
-                    type="checkbox"
+                    type="radio"
                     name="cuisine"
                     value="2"
                     aria-label="mexican"
@@ -130,7 +128,7 @@ const Generator = () => {
 
                     <input 
                     id="thai"
-                    type="checkbox"
+                    type="radio"
                     name="cuisine"
                     value="3"
                     aria-label="thai"
@@ -141,7 +139,7 @@ const Generator = () => {
 
                     <input 
                     id="japanese"
-                    type="checkbox"
+                    type="radio"
                     name="cuisine"
                     value="4"
                     aria-label="japanese"
@@ -153,7 +151,7 @@ const Generator = () => {
                 <div className="options">
                     <input 
                     id="mediterranean"
-                    type="checkbox"
+                    type="radio"
                     name="cuisine"
                     value="5"
                     aria-label="mediterranean"
@@ -164,7 +162,7 @@ const Generator = () => {
 
                     <input 
                     id="indian"
-                    type="checkbox"
+                    type="radio"
                     name="cuisine"
                     value="6"
                     aria-label="indian"
@@ -175,7 +173,7 @@ const Generator = () => {
 
                     <input 
                     id="cajun"
-                    type="checkbox"
+                    type="radio"
                     name="cuisine"
                     value="7"
                     aria-label="cajun"
@@ -186,7 +184,7 @@ const Generator = () => {
 
                     <input 
                     id="chinese"
-                    type="checkbox"
+                    type="radio"
                     name="cuisine"
                     value="8"
                     aria-label="chinese"
@@ -203,7 +201,7 @@ const Generator = () => {
                 <div className="options">
                      <input 
                     id="redMeat"
-                    type="checkbox"
+                    type="radio"
                     name="protein"
                     value="1"
                     aria-label="red meat"
@@ -213,7 +211,7 @@ const Generator = () => {
 
                     <input 
                     id="poultry"
-                    type="checkbox"
+                    type="radio"
                     name="protein"
                     value="2"
                     aria-label="poultry"
@@ -223,7 +221,7 @@ const Generator = () => {
                     
                     <input 
                     id="seafood"
-                    type="checkbox"
+                    type="radio"
                     name="protein"
                     value="3"
                     aria-label="seafood"
@@ -233,7 +231,7 @@ const Generator = () => {
 
                     <input 
                     id="vegetarian"
-                    type="checkbox"
+                    type="radio"
                     name="protein"
                     value="4"
                     aria-label="vegetarian"
