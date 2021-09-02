@@ -3,7 +3,7 @@ What's For Dinner?
 </h1>
 
 <p align="center">
-  <a href="https://github.com/natelee3/interiorize-backend"><strong>What's For Dinner API Docs »</strong></a>
+  <a href="https://github.com/sarahdepalo/whats-for-dinner-backend"><strong>What's For Dinner API Docs »</strong></a>
 </p>
 
 *What's For Dinner?* was a fun side project made primarily for personal use after getting tired of sitting in agony when I couldn't figure out what to make for dinner and needed some inspiration. This web app allows users to narrow done their dinner ideas by cuisine and/or protein. Users can also hit the *Let's Eat* button for a truly random dinner idea. 
