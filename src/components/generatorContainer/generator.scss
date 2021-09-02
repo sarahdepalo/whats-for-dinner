@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .container {
     text-align: center;
     width: 70%;
@@ -13,16 +15,98 @@
 .proteinsContainer {
     text-align: center;
     margin: 0 auto;
+    button {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
 }
 
 .options {
     display: flex;
-    flex-wrap: wrap;
+    justify-content:space-between;
     margin: 0 auto;
     text-align: center;
-    width: 80%;
+    width: 65%;
+
+    &:nth-of-type(2) {
+        margin-top: 15px;
+    }
+
+    input {
+        margin: 0;
+        height: 0;
+        width: 0;
+        padding: 0;
+
+        & + label {
+            border: 2px solid $hot-pink;
+            padding: 10px;
+            width: 164px;
+            -o-transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+    
+        & + label:hover {
+            cursor: pointer;
+            background-color: $hot-pink;
+            background-position: 100% 0;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+    
+        &:checked + label{
+            background-color:$hot-pink;
+        }
+    }
 }
 
+.resultsContainer {
+    margin-top: 50px;
+    margin-bottom: 120px;
+    .row {
+        justify-content: space-between;
+        width: 75%;
+        margin: 0 auto;
+      
+    }
+}
+
+.col-3 {
+    border: 8px solid;
+    word-wrap: break-word;
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    --angle: 0deg;
+    border-image: linear-gradient(var(--angle), $hot-pink, $light-purple) 1;
+    animation: 10s rotate linear infinite;
+
+    h2 {
+        align-self: center;
+        padding: 10px;
+    }
+
+    &:nth-of-type(2) {
+        border: none;
+    }
+}
+
+@keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
 
 @media screen and (max-width: 960px) {
     .container {
