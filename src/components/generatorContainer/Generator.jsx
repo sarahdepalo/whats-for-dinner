@@ -245,7 +245,7 @@ const Generator = () => {
         </form>
 
         <div className="resultsContainer">
-            {!!randomEntree ? 
+            {!!randomEntree && !!randomSide ? 
             <div className="row">
                 <div className="col-3 animated">
                     <h2>{randomEntree.entree_name}</h2>
