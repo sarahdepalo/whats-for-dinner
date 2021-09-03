@@ -77,6 +77,14 @@
     }
 }
 
+.spinnerContainer {
+    display: flex;
+    justify-content: center;
+    img {
+        height: 120px;
+    }
+}
+
 .col-3 {
     border: 8px solid;
     word-wrap: break-word;

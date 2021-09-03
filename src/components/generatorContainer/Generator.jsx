@@ -258,7 +258,9 @@ const Generator = () => {
                     <h2>{randomSide.side_name}</h2>
                 </div>
             </div>
-            :  <img src={spinner} alt="loading..."/>}  
+            : <div class="spinnerContainer"> 
+                <img src={spinner} alt="loading..."/>
+            </div> }  
         </div>
         </>
     )
