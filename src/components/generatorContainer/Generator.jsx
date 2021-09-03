@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import spinner from './spinner.gif';
 import './generator.scss';
 
 const Generator = () => {
@@ -257,8 +258,7 @@ const Generator = () => {
                     <h2>{randomSide.side_name}</h2>
                 </div>
             </div>
-
-            : null}
+            :  <img src={spinner} alt="loading..."/>}  
         </div>
         </>
     )
