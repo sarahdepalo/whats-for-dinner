@@ -5,7 +5,7 @@ import "./introContainer.scss";
 const IntroContainer = () => {
   return (
     <>
-      <div className="row">
+      <div className="row intro">
         <div className="col">
           <h1>Never Think About Choosing Dinner Again</h1>
           <div className="paragraphBox">
