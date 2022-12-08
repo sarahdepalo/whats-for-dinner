@@ -16,7 +16,7 @@ const Generator = () => {
         const getInitialDinner = async () => {
             const categoryArray = [1, 2, 3, 4, 5, 6, 7, 8];
             let randomCategory = (Math.floor(Math.random() * categoryArray.length));
-            const url = `https://whats-for-dinner2.herokuapp.com/dinner/category/${randomCategory}`;
+            const url = `https://whats-for-dinner-backend-production.up.railway.app/dinner/category/${randomCategory}`;
             const response = await fetch(url).then((response) => response.json());
 
             let randomEntreeId = (Math.floor(Math.random() * response.entrees.length));
@@ -48,7 +48,7 @@ const Generator = () => {
         if(state.cuisine === "" && state.protein === "") {
             const categoryArray = [1, 2, 3, 4, 5, 6, 7, 8];
             const randomCategory = (Math.floor(Math.random() * categoryArray.length));
-            const url = `https://whats-for-dinner2.herokuapp.com/dinner/category/${randomCategory}`;
+            const url = `https://whats-for-dinner-backend-production.up.railway.app/dinner/category/${randomCategory}`;
             const response = await fetch(url).then((response) => response.json());
 
             randomEntreeId = (Math.floor(Math.random() * response.entrees.length));
@@ -61,7 +61,7 @@ const Generator = () => {
         //If user ONLY selects cuisine
         if(!!state.cuisine && state.protein === "") {
             // fetch all the entrees & sides for that category
-            const url = `https://whats-for-dinner2.herokuapp.com/dinner/category/${state.cuisine}`;
+            const url = `https://whats-for-dinner-backend-production.up.railway.app/dinner/category/${state.cuisine}`;
             const response = await fetch(url).then((response) => response.json());
             randomEntreeId = (Math.floor(Math.random() * response.entrees.length));
             setRandomEntree(response.entrees[randomEntreeId]);
@@ -72,7 +72,7 @@ const Generator = () => {
 
             //If user selects cuisine AND protein
             if(!!state.cuisine && !!state.protein) {
-                const url = `https://whats-for-dinner2.herokuapp.com/dinner/category/${state.cuisine}/protein/${state.protein}`;
+                const url = `https://whats-for-dinner-backend-production.up.railway.app/dinner/category/${state.cuisine}/protein/${state.protein}`;
                 const response = await fetch(url).then((response) => response.json());
                 console.log('Protein and cuisine response is', response)
                 randomEntreeId = (Math.floor(Math.random() * response.entrees.length));
@@ -83,7 +83,7 @@ const Generator = () => {
 
                 //If user selects ONLY protein
                 if(state.cuisine === "" && !!state.protein) {
-                    const url = `https://whats-for-dinner2.herokuapp.com/dinner/protein/${state.protein}`;
+                    const url = `https://whats-for-dinner-backend-production.up.railway.app/protein/${state.protein}`;
                     const response = await fetch(url).then((response) => response.json());
                     randomEntreeId = (Math.floor(Math.random() * response.entrees.length));
                     setRandomEntree(response.entrees[randomEntreeId]);
